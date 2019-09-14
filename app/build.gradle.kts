@@ -26,6 +26,7 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
     implementation(project(":framework"))
+    implementation(project(":data"))
 
     /* android test */
     testImplementation(TestLibs.junit)

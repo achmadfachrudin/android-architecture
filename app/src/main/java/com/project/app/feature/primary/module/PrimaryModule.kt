@@ -1,6 +1,6 @@
-package com.project.app.module
+package com.project.app.feature.primary.module
 
-import com.project.app.presentation.primary.PrimaryViewModel
+import com.project.app.feature.primary.PrimaryViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

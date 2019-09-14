@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="porcelain">#F5F6F7</color>
+    <color name="black">#000000</color>
+    <color name="mine_shaft">#2A2A2A</color>
+    <color name="tundora">#4A4A4A</color>
+    <color name="gray">#79818A</color>
+    <color name="waikawa">#556799</color>
+    <color name="mandy">#E85959</color>
+</resources>

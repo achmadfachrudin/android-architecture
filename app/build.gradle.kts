@@ -25,16 +25,16 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    /* kotlin */
-    implementation(Libs.kotlin)
-    implementation(Libs.kotlinKtx)
-
-    /* android */
-    implementation(Libs.appcompat)
-    implementation(Libs.constraint)
+    implementation(project(":framework"))
 
     /* android test */
     testImplementation(TestLibs.junit)
+    testImplementation(TestLibs.coroutineTest)
+    testImplementation(TestLibs.koinTest)
+    testImplementation(TestLibs.mockito)
+    testImplementation(TestLibs.mockitoInline)
+    androidTestImplementation(TestLibs.testCore)
+    androidTestImplementation(TestLibs.testRunner)
     androidTestImplementation(TestLibs.testRules)
     androidTestImplementation(TestLibs.testJunit)
     androidTestImplementation(TestLibs.espresso)

@@ -119,6 +119,7 @@ dependencies {
     testImplementation(TestLibs.koinTest)
     testImplementation(TestLibs.mockito)
     testImplementation(TestLibs.mockitoInline)
+    testImplementation(TestLibs.mockWebServer)
     androidTestImplementation(TestLibs.testCore)
     androidTestImplementation(TestLibs.testRunner)
     androidTestImplementation(TestLibs.testRules)

@@ -83,6 +83,7 @@ object TestLibs {
     const val koinTest = "org.koin:koin-test:${Versions.koin}"
     const val mockito = "org.mockito:mockito-core:${Versions.mockito}"
     const val mockitoInline = "org.mockito:mockito-inline:${Versions.mockito}"
+    const val mockWebServer = "com.squareup.okhttp3:mockwebserver:${Versions.okhttp}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
     const val testJunit = "androidx.test.ext:junit:${Versions.testJunit}"
     const val testCore = "androidx.test:core:${Versions.testCore}"

@@ -94,7 +94,7 @@
             android:paddingRight="24dp"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            tools:text="@string/button_retry"
+            tools:text="@string/btn_retry"
             tools:visibility="visible" />
     </LinearLayout>
 </RelativeLayout>

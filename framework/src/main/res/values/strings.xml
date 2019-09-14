@@ -1,6 +1,18 @@
 <resources>
     <string name="app_name">framework</string>
+    <string name="msg_test">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
 
-    <string name="button_retry">Try Again</string>
-    <string name="text_loading">Load data</string>
+    <string name="pattern_number">0123456789</string>
+
+    <!--Loading-->
+    <string name="msg_loading">Load data</string>
+    <string name="btn_retry">Try Again</string>
+
+    <!--Error-->
+    <string name="msg_error_title">Oops, Something went wrong</string>
+    <string name="msg_error">Check your connection and try again</string>
+
+    <!--Empty-->
+    <string name="msg_empty_title">Oops, No Menu yet</string>
+    <string name="msg_empty">Try again later</string>
 </resources>

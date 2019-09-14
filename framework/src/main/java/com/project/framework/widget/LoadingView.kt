@@ -58,7 +58,7 @@ class LoadingView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
     private fun showLoading() {
         state = State.LOADING
         progressTitle?.text = null
-        progressSubtitle?.text = context.getString(R.string.text_loading)
+        progressSubtitle?.text = context.getString(R.string.msg_loading)
         progressMessage?.text = null
         showImage(0)
         showButton()
@@ -157,7 +157,7 @@ class LoadingView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
     }
 
     private fun setDefaultRetrybutton() {
-        retryButton?.text = context.getString(R.string.button_retry)
+        retryButton?.text = context.getString(R.string.btn_retry)
     }
 
     fun setOnRetryListener(listener: OnRetryListener) {
@@ -175,7 +175,7 @@ class LoadingView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
     interface OnRetryListener {
         fun onRetry()
 
-        fun onClickEmpty()  {
+        fun onClickEmpty() {
             // empty
         }
     }

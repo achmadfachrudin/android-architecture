@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">android-architecture</string>
+
+    <!--Button-->
+    <string name="btn_calculate">Calculate</string>
+
+
+    <!--Text-->
+    <string name="msg_press_back_to_exit">Press Back button again to exit</string>
+
+    <string name="msg_main_title">Project App</string>
+    <string name="msg_addition_title">Addition</string>
+    <string name="msg_multiplication_title">Multiplication</string>
+    <string name="msg_primary_title">Primary</string>
+    <string name="msg_fibonacci_title">Fibonacci</string>
+
+    <string name="msg_input_a">Enter Value A</string>
+    <string name="msg_input_b">Enter Value B</string>
 </resources>

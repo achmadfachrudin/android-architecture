@@ -22,7 +22,8 @@ class BaseApplication : Application() {
         PrefManager.init(this)
 
         val featureModule = listOf(
-            splashScreenModule
+            splashScreenModule,
+            mainModule
         )
 
         // start Koin context

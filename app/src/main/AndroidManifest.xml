@@ -19,14 +19,18 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name=".presentation.main.MainActivity"
-            android:screenOrientation="portrait">
+            android:name="com.project.app.presentation.splashscreen.SplashScreenActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <activity
+            android:name=".presentation.main.MainActivity"
+            android:screenOrientation="portrait" />
+
+    </application>
 </manifest>

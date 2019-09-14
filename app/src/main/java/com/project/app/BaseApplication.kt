@@ -25,7 +25,8 @@ class BaseApplication : Application() {
             splashScreenModule,
             mainModule,
             additionModule,
-            multiplicationModule
+            multiplicationModule,
+            primaryModule
         )
 
         // start Koin context

@@ -8,6 +8,7 @@ import com.project.app.R
 import com.project.app.databinding.ItemMenuBinding
 import com.project.app.presentation.addition.AdditionActivity
 import com.project.app.presentation.multiplication.MultiplicationActivity
+import com.project.app.presentation.primary.PrimaryActivity
 import com.project.data.entities.menu.MenuItem
 import com.project.framework.core.BaseRecycleViewAdapter
 import com.project.framework.core.BaseViewHolder
@@ -71,6 +72,9 @@ class MenuListItemAdapter : BaseRecycleViewAdapter<MenuItem>() {
                     }
                     2 -> {
                         MultiplicationActivity.startThisActivity(context)
+                    }
+                    3 -> {
+                        PrimaryActivity.startThisActivity(context)
                     }
                 }
             }

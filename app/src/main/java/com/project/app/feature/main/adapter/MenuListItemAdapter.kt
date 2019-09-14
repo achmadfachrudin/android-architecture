@@ -65,7 +65,7 @@ class MenuListItemAdapter : BaseRecycleViewAdapter<MenuItem>() {
             }
         }
 
-        override fun onClickMenu(view: View) {
+        override fun onClickItem(view: View) {
             data?.let {
                 when (it.id) {
                     1 -> {

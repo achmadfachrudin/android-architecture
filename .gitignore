@@ -39,7 +39,7 @@ captures/
 .idea/
 
 # Keystore files
-*.jks
+# *.jks
 *.keystore
 
 # External native build folder generated in Android Studio 2.2 and later

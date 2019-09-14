@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import com.project.app.R
 import com.project.app.databinding.ItemMenuBinding
 import com.project.app.presentation.addition.AdditionActivity
+import com.project.app.presentation.multiplication.MultiplicationActivity
 import com.project.data.entities.menu.MenuItem
 import com.project.framework.core.BaseRecycleViewAdapter
 import com.project.framework.core.BaseViewHolder
@@ -67,6 +68,9 @@ class MenuListItemAdapter : BaseRecycleViewAdapter<MenuItem>() {
                 when (it.id) {
                     1 -> {
                         AdditionActivity.startThisActivity(context)
+                    }
+                    2 -> {
+                        MultiplicationActivity.startThisActivity(context)
                     }
                 }
             }

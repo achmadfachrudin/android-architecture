@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+                name="view"
+                type="com.project.app.presentation.multiplication.MultiplicationView"/>
+
+        <variable
+                name="vm"
+                type="com.project.app.presentation.multiplication.MultiplicationViewModel"/>
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/til_b">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_a"
+                    style="@style/RegularFont"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="@string/pattern_number"
+                    android:gravity="center"
+                    android:maxEms="3"
+                    android:maxLength="3"
+                    app:addTextChangedListener="@{view.textWatcherA}"
+                    android:inputType="phone"
+                    android:hint="@string/msg_input_a"
+                    android:imeOptions="actionDone"
+                    android:text="@={vm.bTextA}"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/btn_calculate">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    style="@style/RegularFont"
+                    android:id="@+id/edt_b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="@string/pattern_number"
+                    android:gravity="center"
+                    android:maxEms="3"
+                    android:maxLength="3"
+                    android:inputType="phone"
+                    android:hint="@string/msg_input_b"
+                    app:addTextChangedListener="@{view.textWatcherB}"
+                    android:imeOptions="actionDone"
+                    android:text="@={vm.bTextB}"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+                android:id="@+id/btn_calculate"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_margin="16dp"
+                android:enabled="@{safeUnbox(vm.isShowButton) ? true : false}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{v ->view.onClickCalculate(v)}"
+                android:text="@string/btn_calculate"/>
+
+        <TextView
+                style="@style/RegularFont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@{vm.bTextResult}"
+                android:gravity="center_horizontal"
+                tools:text="result"
+                app:layout_constraintTop_toBottomOf="@+id/btn_calculate"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

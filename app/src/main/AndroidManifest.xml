@@ -35,5 +35,9 @@
         <activity
             android:name=".presentation.addition.AdditionActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".presentation.multiplication.MultiplicationActivity"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>

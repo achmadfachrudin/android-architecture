@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.project.app.R
 import com.project.app.databinding.ItemMenuBinding
+import com.project.app.presentation.addition.AdditionActivity
 import com.project.data.entities.menu.MenuItem
 import com.project.framework.core.BaseRecycleViewAdapter
 import com.project.framework.core.BaseViewHolder
@@ -62,7 +63,13 @@ class MenuListItemAdapter : BaseRecycleViewAdapter<MenuItem>() {
         }
 
         override fun onClickMenu(view: View) {
-            // ignore
+            data?.let {
+                when (it.id) {
+                    1 -> {
+                        AdditionActivity.startThisActivity(context)
+                    }
+                }
+            }
         }
     }
 }

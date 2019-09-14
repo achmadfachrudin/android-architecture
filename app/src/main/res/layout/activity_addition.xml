@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="view"
+            type="com.project.app.presentation.addition.AdditionView" />
+
+        <variable
+            name="vm"
+            type="com.project.app.presentation.addition.AdditionViewModel" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/til_b">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_a"
+                style="@style/RegularFont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="@string/pattern_number"
+                android:gravity="center"
+                android:hint="@string/msg_input_a"
+                android:imeOptions="actionDone"
+                android:inputType="phone"
+                android:maxEms="3"
+                android:maxLength="3"
+                android:text="@={vm.bTextA}"
+                app:addTextChangedListener="@{view.textWatcherA}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_calculate">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_b"
+                style="@style/RegularFont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="@string/pattern_number"
+                android:gravity="center"
+                android:hint="@string/msg_input_b"
+                android:imeOptions="actionDone"
+                android:inputType="phone"
+                android:maxEms="3"
+                android:maxLength="3"
+                android:text="@={vm.bTextB}"
+                app:addTextChangedListener="@{view.textWatcherB}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_calculate"
+            style="@style/BoldFont"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:enabled="@{safeUnbox(vm.isShowButton) ? true : false}"
+            android:onClick="@{v ->view.onClickCalculate(v)}"
+            android:text="@string/btn_calculate"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/RegularFont"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:gravity="center_horizontal"
+            android:text="@{vm.bTextResult}"
+            app:layout_constraintTop_toBottomOf="@+id/btn_calculate"
+            tools:text="result" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

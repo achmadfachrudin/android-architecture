@@ -23,7 +23,8 @@ class BaseApplication : Application() {
 
         val featureModule = listOf(
             splashScreenModule,
-            mainModule
+            mainModule,
+            additionModule
         )
 
         // start Koin context

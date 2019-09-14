@@ -7,11 +7,11 @@
 
         <variable
             name="view"
-            type="com.project.app.presentation.splashscreen.SplashScreenView" />
+            type="com.project.app.feature.main.presentation.SplashScreenView" />
 
         <variable
             name="vm"
-            type="com.project.app.presentation.splashscreen.SplashScreenViewModel" />
+            type="com.project.app.feature.main.presentation.SplashScreenViewModel" />
 
     </data>
 

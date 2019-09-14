@@ -9,11 +9,11 @@
 
         <variable
             name="view"
-            type="com.project.app.presentation.fibonacci.FibonacciView" />
+            type="com.project.app.feature.fibonacci.presentation.FibonacciView" />
 
         <variable
             name="vm"
-            type="com.project.app.presentation.fibonacci.FibonacciViewModel" />
+            type="com.project.app.feature.fibonacci.presentation.FibonacciViewModel" />
 
     </data>
 

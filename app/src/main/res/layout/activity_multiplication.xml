@@ -9,11 +9,11 @@
 
         <variable
                 name="view"
-                type="com.project.app.presentation.multiplication.MultiplicationView"/>
+                type="com.project.app.feature.multiplication.MultiplicationView"/>
 
         <variable
                 name="vm"
-                type="com.project.app.presentation.multiplication.MultiplicationViewModel"/>
+                type="com.project.app.feature.multiplication.MultiplicationViewModel"/>
 
     </data>
 

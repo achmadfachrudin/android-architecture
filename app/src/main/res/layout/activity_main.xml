@@ -9,11 +9,11 @@
 
         <variable
             name="view"
-            type="com.project.app.presentation.main.MainView" />
+            type="com.project.app.feature.main.presentation.MainView" />
 
         <variable
             name="vm"
-            type="com.project.app.presentation.main.MainViewModel" />
+            type="com.project.app.feature.main.presentation.MainViewModel" />
 
     </data>
 

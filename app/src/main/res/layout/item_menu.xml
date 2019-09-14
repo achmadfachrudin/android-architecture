@@ -8,11 +8,11 @@
 
         <variable
                 name="view"
-                type="com.project.app.presentation.main.adapter.MenuListItemView"/>
+                type="com.project.app.feature.main.adapter.MenuListItemView"/>
 
         <variable
                 name="vm"
-                type="com.project.app.presentation.main.adapter.MenuListItemViewModel"/>
+                type="com.project.app.feature.main.adapter.MenuListItemViewModel"/>
 
     </data>
 

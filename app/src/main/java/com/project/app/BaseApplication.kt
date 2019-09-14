@@ -21,15 +21,6 @@ class BaseApplication : Application() {
         super.onCreate()
         PrefManager.init(this)
 
-        val featureModule = listOf(
-            splashScreenModule,
-            mainModule,
-            additionModule,
-            multiplicationModule,
-            primaryModule,
-            fibonacciModule
-        )
-
         // start Koin context
         startKoin {
             androidContext(this@BaseApplication)

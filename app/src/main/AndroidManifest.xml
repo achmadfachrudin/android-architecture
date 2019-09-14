@@ -19,7 +19,7 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name="com.project.app.presentation.splashscreen.SplashScreenActivity"
+            android:name="com.project.app.feature.main.presentation.SplashScreenActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,23 +29,23 @@
         </activity>
 
         <activity
-            android:name=".presentation.main.MainActivity"
+            android:name=".feature.main.presentation.MainActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".presentation.addition.AdditionActivity"
+            android:name=".feature.addition.presentation.AdditionActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".presentation.multiplication.MultiplicationActivity"
+            android:name=".feature.multiplication.MultiplicationActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".presentation.primary.PrimaryActivity"
+            android:name=".feature.primary.PrimaryActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".presentation.fibonacci.FibonacciActivity"
+            android:name=".feature.fibonacci.presentation.FibonacciActivity"
             android:screenOrientation="portrait" />
     </application>
 </manifest>

@@ -10,10 +10,10 @@ object Versions {
     const val gradle = "3.5.0"
 
     const val kotlin = "1.3.50"
-    const val ktx = "1.0.2"
-    const val coroutine = "1.3.0"
+    const val ktx = "1.1.0"
+    const val coroutine = "1.3.1"
 
-    const val appcompat = "1.0.2"
+    const val appcompat = "1.1.0"
     const val support = "1.0.0"
     const val material = "1.0.0"
     const val constraint = "1.1.3"
@@ -26,17 +26,15 @@ object Versions {
 
     const val retrofit = "2.6.1"
     const val retrofitCoroutine = "0.9.2"
-    const val okhttp = "3.12.0"
-    const val gander = "1.4.0"
+    const val okhttp = "4.2.0"
+    const val gander = "3.1.0"
 
     const val lottie = "3.0.7"
     const val glide = "4.9.0"
 
     /* test */
     const val junit = "4.12"
-    const val coroutineTest = "1.3.0"
-    const val koinTest = "2.0.1"
-    const val mockito = "2.24.0"
+    const val mockito = "3.0.0"
     const val espresso = "3.2.0"
     const val testCore = "1.2.0"
     const val testJunit = "1.1.1"
@@ -70,7 +68,7 @@ object Libs {
     const val retrofitCoroutine = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.retrofitCoroutine}"
     const val okhttp = "com.squareup.okhttp3:okhttp:${Versions.okhttp}"
     const val okhttpInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp}"
-    const val gander = "com.ashokvarma.android:gander:${Versions.gander}"
+    const val gander = "com.ashokvarma.android:gander-imdb:${Versions.gander}"
     const val ganderNoOp = "com.ashokvarma.android:gander-no-op:${Versions.gander}"
 
     /* image and animation */
@@ -81,8 +79,8 @@ object Libs {
 
 object TestLibs {
     const val junit = "junit:junit:${Versions.junit}"
-    const val coroutineTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutineTest}"
-    const val koinTest = "org.koin:koin-test:${Versions.koinTest}"
+    const val coroutineTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutine}"
+    const val koinTest = "org.koin:koin-test:${Versions.koin}"
     const val mockito = "org.mockito:mockito-core:${Versions.mockito}"
     const val mockitoInline = "org.mockito:mockito-inline:${Versions.mockito}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"

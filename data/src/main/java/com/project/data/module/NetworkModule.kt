@@ -1,16 +1,19 @@
 package com.project.data.module
 
 import android.util.Log
+import com.ashokvarma.gander.GanderInterceptor
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.project.data.BuildConfig
 import com.project.data.service.MainService
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
+
 
 /**
  * Created by achmad.fachrudin on 1-Jun-19
@@ -18,13 +21,19 @@ import java.util.concurrent.TimeUnit
 val networkModule = module {
 
     factory<Interceptor> {
-        HttpLoggingInterceptor(HttpLoggingInterceptor.Logger { Log.d("API", it) })
-            .setLevel(HttpLoggingInterceptor.Level.BODY)
+        HttpLoggingInterceptor(object : HttpLoggingInterceptor.Logger {
+            override fun log(message: String) {
+                Log.d("API", message)
+            }
+        }).apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        }
     }
 
     factory {
         OkHttpClient.Builder()
-            .addInterceptor(get())
+            .addInterceptor(interceptor = get())
+            .addInterceptor(GanderInterceptor(androidContext()).showNotification(true))
             .connectTimeout(120, TimeUnit.SECONDS)
             .readTimeout(120, TimeUnit.SECONDS)
             .writeTimeout(90, TimeUnit.SECONDS)

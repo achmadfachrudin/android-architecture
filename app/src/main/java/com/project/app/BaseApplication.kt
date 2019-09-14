@@ -3,6 +3,8 @@ package com.project.app
 import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
+import com.ashokvarma.gander.Gander
+import com.ashokvarma.gander.imdb.GanderIMDB
 import com.project.app.module.*
 import com.project.data.module.databaseModule
 import com.project.data.module.networkModule
@@ -21,7 +23,10 @@ class BaseApplication : Application() {
         super.onCreate()
         PrefManager.init(this)
 
-        // start Koin context
+        /* gander */
+        Gander.setGanderStorage(GanderIMDB.getInstance())
+
+        /* koin */
         startKoin {
             androidContext(this@BaseApplication)
             androidLogger()

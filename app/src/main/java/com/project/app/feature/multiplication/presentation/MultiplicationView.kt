@@ -1,4 +1,4 @@
-package com.project.app.feature.multiplication
+package com.project.app.feature.multiplication.presentation
 
 import android.text.TextWatcher
 import android.view.View

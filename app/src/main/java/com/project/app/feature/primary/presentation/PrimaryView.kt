@@ -1,4 +1,4 @@
-package com.project.app.feature.primary
+package com.project.app.feature.primary.presentation
 
 import android.text.TextWatcher
 import android.view.View

@@ -8,8 +8,8 @@ import com.project.app.R
 import com.project.app.databinding.ItemMenuBinding
 import com.project.app.feature.addition.presentation.AdditionActivity
 import com.project.app.feature.fibonacci.presentation.FibonacciActivity
-import com.project.app.feature.multiplication.MultiplicationActivity
-import com.project.app.feature.primary.PrimaryActivity
+import com.project.app.feature.multiplication.presentation.MultiplicationActivity
+import com.project.app.feature.primary.presentation.PrimaryActivity
 import com.project.data.entities.menu.MenuItem
 import com.project.framework.core.BaseRecycleViewAdapter
 import com.project.framework.core.BaseViewHolder

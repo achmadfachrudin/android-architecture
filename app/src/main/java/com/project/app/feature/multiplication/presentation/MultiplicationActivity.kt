@@ -1,4 +1,4 @@
-package com.project.app.feature.multiplication
+package com.project.app.feature.multiplication.presentation
 
 import android.content.Context
 import android.content.Intent

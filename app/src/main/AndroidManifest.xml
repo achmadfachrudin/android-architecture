@@ -37,11 +37,11 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".feature.multiplication.MultiplicationActivity"
+            android:name=".feature.multiplication.presentation.MultiplicationActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".feature.primary.PrimaryActivity"
+            android:name=".feature.primary.presentation.PrimaryActivity"
             android:screenOrientation="portrait" />
 
         <activity

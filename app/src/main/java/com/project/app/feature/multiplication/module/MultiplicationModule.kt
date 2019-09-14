@@ -1,6 +1,6 @@
 package com.project.app.feature.multiplication.module
 
-import com.project.app.feature.multiplication.MultiplicationViewModel
+import com.project.app.feature.multiplication.presentation.MultiplicationViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

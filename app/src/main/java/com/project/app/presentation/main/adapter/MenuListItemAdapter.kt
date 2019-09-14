@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import com.project.app.R
 import com.project.app.databinding.ItemMenuBinding
 import com.project.app.presentation.addition.AdditionActivity
+import com.project.app.presentation.fibonacci.FibonacciActivity
 import com.project.app.presentation.multiplication.MultiplicationActivity
 import com.project.app.presentation.primary.PrimaryActivity
 import com.project.data.entities.menu.MenuItem
@@ -75,6 +76,9 @@ class MenuListItemAdapter : BaseRecycleViewAdapter<MenuItem>() {
                     }
                     3 -> {
                         PrimaryActivity.startThisActivity(context)
+                    }
+                    4 -> {
+                        FibonacciActivity.startThisActivity(context)
                     }
                 }
             }

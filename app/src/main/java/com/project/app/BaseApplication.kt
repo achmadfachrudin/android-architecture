@@ -26,7 +26,8 @@ class BaseApplication : Application() {
             mainModule,
             additionModule,
             multiplicationModule,
-            primaryModule
+            primaryModule,
+            fibonacciModule
         )
 
         // start Koin context

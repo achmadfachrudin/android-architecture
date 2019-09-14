@@ -23,12 +23,9 @@ class MenuListItemAdapter : BaseRecycleViewAdapter<MenuItem>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<MenuItem> {
         val view = LayoutInflater.from(parent.context).inflate(
-            R.layout.item_menu, parent, false)
+            R.layout.item_menu, parent, false
+        )
         return ViewHolder(parent.context, view)
-    }
-
-    override fun onBindViewHolder(holder: BaseViewHolder<MenuItem>, position: Int) {
-        (holder as ViewHolder).bindData(getItem(position))
     }
 
     class ViewHolder(context: Context, view: View) :
@@ -36,50 +33,43 @@ class MenuListItemAdapter : BaseRecycleViewAdapter<MenuItem>() {
         MenuListItemView,
         ViewDataBindingOwner<ItemMenuBinding> {
 
+        override lateinit var data: MenuItem
         override lateinit var binding: ItemMenuBinding
         private var viewModel: MenuListItemViewModel? = null
-        private var data: MenuItem? = null
 
         init {
             binding.vm = MenuListItemViewModel()
-            binding.view = this
-            viewModel = binding.vm
+            viewModel = binding.vm!!
         }
 
-        override fun bindData(data: MenuItem) {
-            this.data = data
+        override fun bindData() {
+            viewModel?.bTextTitle?.set(data.title)
 
-            data.let {
-                viewModel?.bTextTitle?.set(it.title)
+            data.imageUrl?.let { imageUrl ->
+                GlideApp.with(context)
+                    .load(imageUrl)
+                    .thumbnail(0.1f)
+                    .placeholder(R.drawable.bg_placeholder)
+                    .error(R.drawable.bg_placeholder)
+                    .into(binding.imgMenu)
 
-                it.imageUrl?.let { imageUrl ->
-                    GlideApp.with(context)
-                        .load(imageUrl)
-                        .thumbnail(0.1f)
-                        .placeholder(R.drawable.bg_placeholder)
-                        .error(R.drawable.bg_placeholder)
-                        .into(binding.imgMenu)
-
-                    viewModel?.bShowImage?.set(true)
-                }
+                viewModel?.bShowImage?.set(true)
             }
         }
 
         override fun onClickItem(view: View) {
-            data?.let {
-                when (it.id) {
-                    1 -> {
-                        AdditionActivity.startThisActivity(context)
-                    }
-                    2 -> {
-                        MultiplicationActivity.startThisActivity(context)
-                    }
-                    3 -> {
-                        PrimaryActivity.startThisActivity(context)
-                    }
-                    4 -> {
-                        FibonacciActivity.startThisActivity(context)
-                    }
+            when (data.id) {
+                1 -> {
+                    AdditionActivity.startThisActivity(context)
+                }
+                2 -> {
+                    MultiplicationActivity.startThisActivity(context)
+                }
+                3 -> {
+                    PrimaryActivity.startThisActivity(context)
+                }
+                4 -> {
+                    FibonacciActivity.startThisActivity(context)
                 }
             }
         }

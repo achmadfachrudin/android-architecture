@@ -18,7 +18,7 @@
 
     <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:onClick="@{v ->view.onClickMenu(v)}"
+            android:onClick="@{v ->view.onClickItem(v)}"
             android:layout_height="wrap_content">
 
         <LinearLayout

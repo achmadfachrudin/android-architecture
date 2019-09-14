@@ -14,11 +14,15 @@ abstract class BaseViewHolder<T>(val context: Context, view: View) : RecyclerVie
         if (this is ViewDataBindingOwner<*>) {
             setViewBinding(view)
             if (this is ViewModelOwner<*>) {
-                binding.setVariable(BR.vm, viewModel)
+                binding.setVariable(BR.vm, this.viewModel)
                 binding.executePendingBindings()
+            }
+            if (this is BaseViewItem) {
+                binding.setVariable(BR.view, this)
             }
         }
     }
 
-    abstract fun bindData(data: T)
+    abstract var data: T
+    abstract fun bindData()
 }

@@ -32,6 +32,7 @@ abstract class BaseRecycleViewAdapter<T>() : RecyclerView.Adapter<BaseViewHolder
     override fun getItemCount(): Int = data.size
 
     override fun onBindViewHolder(holder: BaseViewHolder<T>, position: Int) {
-        holder.bindData(getItem(position))
+        holder.data = getItem(position)
+        holder.bindData()
     }
 }

@@ -7,6 +7,6 @@ import retrofit2.http.GET
 
 
 interface MainService {
-    @GET("5d10dfe030000060484ca2f7")
+    @GET("5d7f91dc3300003c56f0b3fa")
     fun getMenuAsync(): Deferred<Response<Menu>>
 }

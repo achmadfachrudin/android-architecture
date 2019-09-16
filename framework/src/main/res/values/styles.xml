@@ -8,6 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/gray</item>
+    </style>
+
     <style name="RegularFont">
         <item name="android:fontFamily">@font/roboto</item>
         <item name="android:lineSpacingMultiplier">1.2</item>

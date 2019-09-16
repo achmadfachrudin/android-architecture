@@ -11,6 +11,7 @@ import org.koin.dsl.module
 val mainModule = module {
 
     viewModel { SplashScreenViewModel() }
+
     viewModel { MainViewModel(get()) }
 }
 

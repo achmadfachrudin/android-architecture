@@ -29,6 +29,7 @@ class MainActivity : BaseActivity(),
     companion object {
         fun startThisActivity(context: Context) {
             val intent = Intent(context, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             context.startActivity(intent)
         }
     }

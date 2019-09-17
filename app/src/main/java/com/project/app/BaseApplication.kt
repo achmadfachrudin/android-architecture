@@ -9,7 +9,7 @@ import com.project.app.module.*
 import com.project.data.module.databaseModule
 import com.project.data.module.networkModule
 import com.project.data.module.repositoryModule
-import com.project.framework.util.PrefManager
+import com.project.data.PrefManager
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

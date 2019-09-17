@@ -1,4 +1,4 @@
-package com.project.framework.util
+package com.project.data
 
 import android.content.Context
 import android.content.SharedPreferences

@@ -3,6 +3,7 @@
 
     <!--Button-->
     <string name="btn_goto_bravo">Go To Bravo</string>
+    <string name="btn_change_pref">Change Preference</string>
 
 
     <!--Text-->

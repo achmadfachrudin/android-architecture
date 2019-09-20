@@ -12,6 +12,7 @@ object PrefManager {
     private lateinit var preferences: SharedPreferences
 
     private val IS_FIRST_OPEN = Pair("IS_FIRST_OPEN", true)
+    private val IS_LIKE_MATH = Pair("IS_LIKE_MATH", true)
 
     fun init(context: Context) {
         preferences = context.getSharedPreferences(NAME, MODE)
@@ -27,9 +28,15 @@ object PrefManager {
         editor.apply()
     }
 
-    var firstOpen: Boolean
+    var isFirstOpen: Boolean
         get() = preferences.getBoolean(IS_FIRST_OPEN.first, IS_FIRST_OPEN.second)
         set(value) = preferences.edit {
             it.putBoolean(IS_FIRST_OPEN.first, value)
+        }
+
+    var isLikeMath: Boolean
+        get() = preferences.getBoolean(IS_LIKE_MATH.first, IS_LIKE_MATH.second)
+        set(value) = preferences.edit {
+            it.putBoolean(IS_LIKE_MATH.first, value)
         }
 }

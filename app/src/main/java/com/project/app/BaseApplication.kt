@@ -11,7 +11,7 @@ import com.project.data.module.databaseModule
 import com.project.data.module.networkModule
 import com.project.data.module.repositoryModule
 import com.project.data.PrefManager
-import com.project.app.navigation.NavigationEvent
+import com.project.framework.navigation.NavigationEvent
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.koin.android.ext.koin.androidContext

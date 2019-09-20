@@ -8,11 +8,11 @@
 
         <variable
             name="view"
-            type="com.project.feature_alpha.presentation.AlphaView" />
+            type="com.project.feature_bravo.presentation.BravoView" />
 
         <variable
             name="vm"
-            type="com.project.feature_alpha.presentation.AlphaViewModel" />
+            type="com.project.feature_bravo.presentation.BravoViewModel" />
 
     </data>
 
@@ -26,21 +26,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@{vm.textPref}"
+            android:text="@={vm.textPref}"
+            android:textSize="16sp"
+            tools:text="Test" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@={vm.textTest}"
             android:textSize="16sp"
             tools:text="Test" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{v ->view.onClickChangePref(v)}"
-            android:text="@string/btn_change_pref" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:onClick="@{v ->view.onClickGotoFeatureBravo(v)}"
-            android:text="@string/btn_goto_bravo" />
+            android:onClick="@{v ->view.onClickGotoHome(v)}"
+            android:text="@string/btn_goto_home" />
     </LinearLayout>
 </layout>

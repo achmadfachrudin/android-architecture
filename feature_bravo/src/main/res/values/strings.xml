@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">feature_bravo</string>
+
+    <!--Button-->
+    <string name="btn_goto_home">Go To Home</string>
+
+
+    <!--Text-->
+    <string name="msg_bravo_title">Feature Bravo</string>
+</resources>

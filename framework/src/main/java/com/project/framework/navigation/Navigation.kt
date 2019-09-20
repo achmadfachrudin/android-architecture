@@ -1,4 +1,4 @@
-package com.project.app.navigation
+package com.project.framework.navigation
 
 /**
  * Created by achmad.fachrudin on 17-Jun-19

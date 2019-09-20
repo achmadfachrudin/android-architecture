@@ -115,6 +115,7 @@ dependencies {
 
     /* feature with library-type */
     implementation(project(":feature_alpha"))
+    implementation(project(":feature_bravo"))
 
     /* android test */
     testImplementation(TestLibs.junit)

@@ -11,6 +11,7 @@ import com.project.app.feature.fibonacci.presentation.FibonacciActivity
 import com.project.app.feature.multiplication.presentation.MultiplicationActivity
 import com.project.app.feature.primary.presentation.PrimaryActivity
 import com.project.data.entities.menu.MenuItem
+import com.project.feature_alpha.presentation.AlphaActivity
 import com.project.framework.core.BaseRecycleViewAdapter
 import com.project.framework.core.BaseViewHolder
 import com.project.framework.core.GlideApp
@@ -70,6 +71,9 @@ class MenuListItemAdapter : BaseRecycleViewAdapter<MenuItem>() {
                 }
                 4 -> {
                     FibonacciActivity.startThisActivity(context)
+                }
+                5 -> {
+                    AlphaActivity.startThisActivity(context)
                 }
             }
         }

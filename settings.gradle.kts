@@ -1,1 +1,1 @@
-include(":app", ":framework", ":data")
+include(":app", ":framework", ":data", ":feature_alpha")

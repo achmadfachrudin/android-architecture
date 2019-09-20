@@ -5,6 +5,7 @@ import com.project.app.feature.fibonacci.module.fibonacciModule
 import com.project.app.feature.main.module.mainModule
 import com.project.app.feature.multiplication.module.multiplicationModule
 import com.project.app.feature.primary.module.primaryModule
+import com.project.feature_alpha.module.alphaModule
 
 /**
  * Created by achmad.fachrudin on 13-Jun-19
@@ -14,5 +15,7 @@ val featureModule = listOf(
     additionModule,
     multiplicationModule,
     primaryModule,
-    fibonacciModule
+    fibonacciModule,
+
+    alphaModule
 )

@@ -1,4 +1,4 @@
-package com.project.framework.navigation
+package com.project.app.navigation
 
 import android.content.Context
 import android.os.Bundle

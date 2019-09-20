@@ -113,6 +113,9 @@ dependencies {
     implementation(project(":framework"))
     implementation(project(":data"))
 
+    /* feature with library-type */
+    implementation(project(":feature_alpha"))
+
     /* android test */
     testImplementation(TestLibs.junit)
     testImplementation(TestLibs.coroutineTest)

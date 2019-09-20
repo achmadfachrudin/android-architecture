@@ -2,8 +2,7 @@ package com.project.app.navigation
 
 import android.content.Intent
 import com.project.app.feature.main.presentation.MainActivity
-import com.project.framework.navigation.Navigation
-import com.project.framework.navigation.NavigationEvent
+import com.project.feature_alpha.presentation.AlphaActivity
 
 /**
  * Created by achmad.fachrudin on 17-Jun-19
@@ -20,7 +19,7 @@ object NavigationRoute {
                 event.context.startActivity(intent)
             }
             Navigation.FEATURE_A -> {
-//                AlphaActivity.startThisActivity(event.context)
+                AlphaActivity.startThisActivity(event.context)
             }
             Navigation.FEATURE_B -> {
 //                BravoActivity.startThisActivity(event.context)

@@ -1,4 +1,4 @@
-# Android Architecture MVVM
+# Android Modular Architecture with MVVM 
 
 ### Inspired by:
 * [Kotlin][1]

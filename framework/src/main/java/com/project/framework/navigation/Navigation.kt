@@ -7,5 +7,7 @@ enum class Navigation {
     MAIN_PAGE,
     FEATURE_A,
     FEATURE_B,
-    FEATURE_C
+    FEATURE_C,
+    FEATURE_Y,
+    FEATURE_Z,
 }

@@ -3,7 +3,13 @@ package com.project.app.feature.main.presentation
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
+import com.google.android.play.core.splitinstall.SplitInstallManager
+import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
+import com.google.android.play.core.splitinstall.SplitInstallRequest
+import com.google.android.play.core.splitinstall.SplitInstallStateUpdatedListener
+import com.google.android.play.core.splitinstall.model.SplitInstallSessionStatus
 import com.project.app.R
 import com.project.app.databinding.ActivityMainBinding
 import com.project.app.feature.main.adapter.MenuListItemAdapter
@@ -12,6 +18,7 @@ import com.project.framework.core.NetworkState
 import com.project.framework.core.owner.ViewDataBindingOwner
 import com.project.framework.core.owner.ViewModelOwner
 import com.project.framework.widget.LoadingView
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -50,10 +57,40 @@ class MainActivity : BaseActivity(),
     private var doubleBackPressed = false
     private lateinit var listAdapter: MenuListItemAdapter
 
+    // for dynamic feature
+    private lateinit var manager: SplitInstallManager
+    private val listener = SplitInstallStateUpdatedListener { state ->
+        state.moduleNames().forEach { name ->
+            when (state.status()) {
+                SplitInstallSessionStatus.DOWNLOADING -> {
+                    progress_bar.max = state.totalBytesToDownload().toInt()
+                    progress_bar.progress = state.bytesDownloaded().toInt()
+                    Toast.makeText(this, "Downloading $name", Toast.LENGTH_LONG).show()
+                }
+                SplitInstallSessionStatus.INSTALLING -> {
+                    progress_bar.max = state!!.totalBytesToDownload().toInt()
+                    progress_bar.progress = state.bytesDownloaded().toInt()
+                    Toast.makeText(this, "Installing $name", Toast.LENGTH_LONG).show()
+                }
+                SplitInstallSessionStatus.INSTALLED -> {
+                    progress_bar.max = 100
+                    progress_bar.progress = 50
+                    progress_bar.visibility = View.GONE
+                    Toast.makeText(this, "$name Successfully installed", Toast.LENGTH_LONG).show()
+                }
+                SplitInstallSessionStatus.FAILED -> {
+                    progress_bar.visibility = View.GONE
+                    Toast.makeText(this, "$name Failed installed", Toast.LENGTH_LONG).show()
+                }
+            }
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         initUI()
+        initDynamicFeature()
 
         viewModel.getMenuFromApi()
         observeNetworkState()
@@ -70,6 +107,26 @@ class MainActivity : BaseActivity(),
 
         listAdapter = MenuListItemAdapter()
         binding.rvList.adapter = listAdapter
+    }
+
+    private fun initDynamicFeature() {
+        manager = SplitInstallManagerFactory.create(this)
+
+        btn_feature.setOnClickListener {
+            if (manager.installedModules.contains("feature_yankee")) {
+                Intent().setClassName(
+                    packageName,
+                    "com.project.feature_yankee.presentation.YankeeActivity"
+                ).also { startActivity(it) }
+            } else {
+                val request = SplitInstallRequest.newBuilder()
+                    .addModule("feature_yankee")
+                    .build()
+                manager.startInstall(request).addOnSuccessListener {
+                    progress_bar.isIndeterminate = false
+                }
+            }
+        }
     }
 
     private fun observeNetworkState() {
@@ -111,6 +168,16 @@ class MainActivity : BaseActivity(),
                 listAdapter.setData(it)
             }
         }
+    }
+
+    override fun onResume() {
+        manager.registerListener(listener)
+        super.onResume()
+    }
+
+    override fun onPause() {
+        manager.unregisterListener(listener)
+        super.onPause()
     }
 
     override fun onBackPressed() {

@@ -24,6 +24,8 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    dynamicFeatures = mutableSetOf(":feature_yankee")
+
     dataBinding {
         isEnabled = true
     }
@@ -89,7 +91,7 @@ android {
         getByName("release") {
             isMinifyEnabled = true
             isDebuggable = false
-            isShrinkResources = true
+            isShrinkResources = false
             isZipAlignEnabled = true
             isJniDebuggable = false
             isRenderscriptDebuggable = false
@@ -110,8 +112,8 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
     /* project */
-    implementation(project(":framework"))
-    implementation(project(":data"))
+    api(project(":framework"))
+    api(project(":data"))
 
     /* feature with library-type */
     implementation(project(":feature_alpha"))

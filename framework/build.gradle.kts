@@ -70,6 +70,7 @@ dependencies {
     api(Libs.constraint)
     api(Libs.multidex)
     kapt(Libs.databinding)
+    api("com.google.android.play:core:1.6.3")
 
     /* room */
     api(Libs.roomRuntime)

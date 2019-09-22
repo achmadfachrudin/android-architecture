@@ -35,6 +35,12 @@ object NavigationRoute {
             Navigation.FEATURE_C -> {
                 // ignore
             }
+            Navigation.FEATURE_Y -> {
+                // ignore
+            }
+            Navigation.FEATURE_Z -> {
+                // ignore
+            }
         }
     }
 }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="view"
+            type="com.project.feature_yankee.presentation.YankeeView" />
+
+        <variable
+            name="vm"
+            type="com.project.feature_yankee.presentation.YankeeViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="72dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@={vm.textPref}"
+            android:textSize="16sp"
+            tools:text="Test" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{v ->view.onClickChangePref(v)}"
+            android:text="@string/btn_change_pref" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:onClick="@{v ->view.onClickGotoFeatureZulu(v)}"
+            android:text="@string/btn_goto_bravo" />
+    </LinearLayout>
+</layout>

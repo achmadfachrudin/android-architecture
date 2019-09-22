@@ -5,6 +5,7 @@ import android.content.Context
 import androidx.multidex.MultiDex
 import com.ashokvarma.gander.Gander
 import com.ashokvarma.gander.imdb.GanderIMDB
+import com.google.android.play.core.splitcompat.SplitCompat
 import com.project.app.module.*
 import com.project.app.navigation.NavigationRoute
 import com.project.data.module.databaseModule
@@ -45,6 +46,7 @@ class BaseApplication : Application() {
     override fun attachBaseContext(base: Context) {
         super.attachBaseContext(base)
         MultiDex.install(this)
+        SplitCompat.install(this)
     }
 
     @Subscribe

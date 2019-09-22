@@ -16,4 +16,5 @@
 
     <string name="msg_input_a">Enter Value A</string>
     <string name="msg_input_b">Enter Value B</string>
+    <string name="title_feature_yankee">Yankee</string>
 </resources>

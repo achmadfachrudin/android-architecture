@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import com.google.android.play.core.splitinstall.SplitInstallManager
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import com.google.android.play.core.splitinstall.SplitInstallRequest
@@ -17,6 +16,8 @@ import com.project.framework.core.BaseActivity
 import com.project.framework.core.NetworkState
 import com.project.framework.core.owner.ViewDataBindingOwner
 import com.project.framework.core.owner.ViewModelOwner
+import com.project.framework.extention.showLongToast
+import com.project.framework.extention.showToast
 import com.project.framework.widget.LoadingView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
@@ -65,22 +66,22 @@ class MainActivity : BaseActivity(),
                 SplitInstallSessionStatus.DOWNLOADING -> {
                     progress_bar.max = state.totalBytesToDownload().toInt()
                     progress_bar.progress = state.bytesDownloaded().toInt()
-                    Toast.makeText(this, "Downloading $name", Toast.LENGTH_LONG).show()
+                    showLongToast("Downloading $name")
                 }
                 SplitInstallSessionStatus.INSTALLING -> {
                     progress_bar.max = state!!.totalBytesToDownload().toInt()
                     progress_bar.progress = state.bytesDownloaded().toInt()
-                    Toast.makeText(this, "Installing $name", Toast.LENGTH_LONG).show()
+                    showLongToast("Installing $name")
                 }
                 SplitInstallSessionStatus.INSTALLED -> {
                     progress_bar.max = 100
                     progress_bar.progress = 50
                     progress_bar.visibility = View.GONE
-                    Toast.makeText(this, "$name Successfully installed", Toast.LENGTH_LONG).show()
+                    showLongToast("$name Successfully installed")
                 }
                 SplitInstallSessionStatus.FAILED -> {
                     progress_bar.visibility = View.GONE
-                    Toast.makeText(this, "$name Failed installed", Toast.LENGTH_LONG).show()
+                    showLongToast("$name Failed installed")
                 }
             }
         }
@@ -185,8 +186,9 @@ class MainActivity : BaseActivity(),
             super.onBackPressed()
             return
         }
-        this.doubleBackPressed = true
-        Toast.makeText(this, getString(R.string.msg_press_back_to_exit), Toast.LENGTH_SHORT).show()
+
+        doubleBackPressed = true
+        showToast(getString(R.string.msg_press_back_to_exit))
 
         GlobalScope.launch(Dispatchers.Main) {
             delay(2000)

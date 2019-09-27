@@ -1,11 +1,9 @@
 package com.project.framework.core
 
-
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-
 
 abstract class EndlessRecyclerViewScrollListener : RecyclerView.OnScrollListener {
     // The minimum amount of items to have below your current scroll position
@@ -68,7 +66,7 @@ abstract class EndlessRecyclerViewScrollListener : RecyclerView.OnScrollListener
                 (mLayoutManager as LinearLayoutManager).findLastVisibleItemPosition()
         }
         onLoadPosition(lastVisibleItemPosition, view)
-            // If the total item count is zero and the previous isn't, assume the
+        // If the total item count is zero and the previous isn't, assume the
         // list is invalidated and should be reset back to initial state
         // If it’s still loading, we check to see if the dataset count has
         // changed, if so we conclude it has finished loading and update the current page
@@ -117,5 +115,4 @@ abstract class EndlessRecyclerViewScrollListener : RecyclerView.OnScrollListener
     abstract fun onLoadMore(page: Int, totalItemsCount: Int, view: RecyclerView)
 
     abstract fun onLoadPosition(lastPosition: Int, view: RecyclerView)
-
 }

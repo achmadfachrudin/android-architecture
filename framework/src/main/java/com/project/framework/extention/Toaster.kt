@@ -7,7 +7,6 @@ import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 
-
 /**
  * Toaster
  * Extension to display the Toast message directly from Context, Activity, and Fragment

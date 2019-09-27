@@ -1,6 +1,5 @@
 package com.project.framework.core
 
-
 @Suppress("DataClassPrivateConstructor")
 data class NetworkState private constructor(
     val status: Status,

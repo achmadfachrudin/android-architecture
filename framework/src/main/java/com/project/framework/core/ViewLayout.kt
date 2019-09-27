@@ -1,9 +1,8 @@
 package com.project.framework.core
 
+import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.annotation.NonNull
-import android.view.View
-
 
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.RUNTIME)

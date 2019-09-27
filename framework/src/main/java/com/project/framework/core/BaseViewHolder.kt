@@ -7,7 +7,6 @@ import com.project.framework.BR
 import com.project.framework.core.owner.ViewDataBindingOwner
 import com.project.framework.core.owner.ViewModelOwner
 
-
 abstract class BaseViewHolder<T>(val context: Context, view: View) : RecyclerView.ViewHolder(view) {
 
     init {

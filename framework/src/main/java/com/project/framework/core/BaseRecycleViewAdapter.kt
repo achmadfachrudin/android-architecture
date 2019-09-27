@@ -2,7 +2,6 @@ package com.project.framework.core
 
 import androidx.recyclerview.widget.RecyclerView
 
-
 abstract class BaseRecycleViewAdapter<T>() : RecyclerView.Adapter<BaseViewHolder<T>>() {
 
     private var data: MutableList<T>

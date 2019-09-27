@@ -7,7 +7,6 @@ import java.math.BigDecimal
 import java.text.NumberFormat
 import java.util.*
 
-
 /**
  * Format integer number as Rupiah (Rp)
  *
@@ -24,7 +23,9 @@ fun Int.formatAsRupiah(): String {
  * @receiver[Long]
  */
 fun Long.formatAsRupiah(): String {
-    return if (this < 0L) "- Rp " + NumberFormat.getInstance(Locale(Constants.LANGUAGE)).format(this * -1)
+    return if (this < 0L) "- Rp " + NumberFormat.getInstance(Locale(Constants.LANGUAGE)).format(
+        this * -1
+    )
     else "Rp " + NumberFormat.getInstance(Locale(Constants.LANGUAGE)).format(this)
 }
 
@@ -34,7 +35,9 @@ fun Long.formatAsRupiah(): String {
  * @receiver[Double]
  */
 fun Double.formatAsRupiah(): String {
-    return if (this < 0.0) "- Rp " + NumberFormat.getInstance(Locale(Constants.LANGUAGE)).format(this * -1)
+    return if (this < 0.0) "- Rp " + NumberFormat.getInstance(Locale(Constants.LANGUAGE)).format(
+        this * -1
+    )
     else "Rp " + NumberFormat.getInstance(Locale(Constants.LANGUAGE)).format(this)
 }
 

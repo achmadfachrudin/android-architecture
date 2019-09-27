@@ -12,6 +12,8 @@ object Versions {
     const val kotlin = "1.3.50"
     const val ktx = "1.1.0"
     const val coroutine = "1.3.1"
+    const val ktlint = "0.34.2"
+    const val ktlintPlugin = "8.2.0"
 
     const val appcompat = "1.1.0"
     const val support = "1.0.0"

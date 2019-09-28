@@ -11,4 +11,3 @@ val additionModule = module {
 
     viewModel { AdditionViewModel() }
 }
-

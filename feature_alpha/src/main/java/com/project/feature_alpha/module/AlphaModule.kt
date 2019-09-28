@@ -11,4 +11,3 @@ val alphaModule = module {
 
     viewModel { AlphaViewModel() }
 }
-

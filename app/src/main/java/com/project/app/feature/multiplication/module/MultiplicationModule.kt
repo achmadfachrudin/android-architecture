@@ -11,4 +11,3 @@ val multiplicationModule = module {
 
     viewModel { MultiplicationViewModel() }
 }
-

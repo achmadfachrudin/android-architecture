@@ -13,7 +13,6 @@ import com.project.framework.core.owner.ViewDataBindingOwner
 import com.project.framework.core.owner.ViewModelOwner
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-
 /**
  * Created by achmad.fachrudin on 7-Jun-19
  */

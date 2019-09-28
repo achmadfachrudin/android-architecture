@@ -11,4 +11,3 @@ val primaryModule = module {
 
     viewModel { PrimaryViewModel() }
 }
-

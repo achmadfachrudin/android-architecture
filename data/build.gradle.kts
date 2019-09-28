@@ -45,7 +45,7 @@ android {
         getByName("release") {
             buildConfigField("String", "API_SAMPLE", "\"https://jsonplaceholder.typicode.com\"")
             buildConfigField("String", "API_BASE", "\"http://www.mocky.io/v2/\"")
-            isMinifyEnabled  = false
+            isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }

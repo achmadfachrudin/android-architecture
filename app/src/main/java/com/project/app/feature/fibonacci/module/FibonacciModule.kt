@@ -11,4 +11,3 @@ val fibonacciModule = module {
 
     viewModel { FibonacciViewModel() }
 }
-

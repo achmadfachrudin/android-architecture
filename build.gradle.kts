@@ -41,6 +41,10 @@ allprojects {
     }
 }
 
+subprojects {
+    apply(plugin = "org.jlleitschuh.gradle.ktlint")
+}
+
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }

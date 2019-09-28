@@ -14,7 +14,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
-
 /**
  * Created by achmad.fachrudin on 1-Jun-19
  */

@@ -3,7 +3,6 @@ package com.project.app.feature.multiplication.presentation
 import androidx.databinding.ObservableField
 import com.project.framework.core.BaseViewModel
 
-
 /**
  * Created by achmad.fachrudin on 7-Jun-19
  */

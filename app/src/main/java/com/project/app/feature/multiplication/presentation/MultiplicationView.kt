@@ -4,7 +4,6 @@ import android.text.TextWatcher
 import android.view.View
 import com.project.framework.core.BaseView
 
-
 /**
  * Created by achmad.fachrudin on 7-Jun-19
  */

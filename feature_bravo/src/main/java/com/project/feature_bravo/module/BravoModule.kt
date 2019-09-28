@@ -11,4 +11,3 @@ val bravoModule = module {
 
     viewModel { BravoViewModel() }
 }
-

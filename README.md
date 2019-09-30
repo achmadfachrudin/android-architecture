@@ -18,8 +18,8 @@
 
 [1]: https://kotlinlang.org/
 [2]: https://docs.gradle.org/current/userguide/kotlin_dsl.html
-[3]: https://ktlint.github.io/
-[4]: https://kotlinlang.org/docs/reference/coroutines-overview.html
+[3]: https://kotlinlang.org/docs/reference/coroutines-overview.html
+[4]: https://ktlint.github.io/
 [5]: https://developer.android.com/jetpack/androidx
 [6]: https://github.com/greenrobot/EventBus
 [7]: https://insert-koin.io/

@@ -1,23 +1,25 @@
 package com.project.app.feature.main.presentation
 
-import com.project.data.module.networkModule
+import com.project.data.module.networkTestModule
 import com.project.data.service.MainService
 import kotlinx.coroutines.runBlocking
+import org.junit.After
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.koin.core.context.startKoin
+import org.koin.core.context.stopKoin
 import org.koin.test.KoinTest
 import org.koin.test.inject
 
-class MainActivityTest: KoinTest {
+class MainActivityTest : KoinTest {
 
     private val service: MainService by inject()
 
     @Before
     fun setUp() {
-        startKoin{
-            modules(networkModule)
+        startKoin {
+            modules(networkTestModule)
         }
     }
 
@@ -32,5 +34,10 @@ class MainActivityTest: KoinTest {
         }.body()
 
         Assert.assertEquals(expectedResult, actualResult?.menu?.get(0)?.title)
+    }
+
+    @After
+    fun after() {
+        stopKoin()
     }
 }

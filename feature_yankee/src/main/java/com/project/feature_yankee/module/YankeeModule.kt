@@ -11,4 +11,3 @@ val yankeeModule = module {
 
     viewModel { YankeeViewModel() }
 }
-

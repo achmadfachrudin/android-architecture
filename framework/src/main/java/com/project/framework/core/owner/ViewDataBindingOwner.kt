@@ -1,12 +1,11 @@
 package com.project.framework.core.owner
 
 import android.app.Activity
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 
 interface ViewDataBindingOwner<T : ViewDataBinding> {
 
@@ -21,7 +20,8 @@ interface ViewDataBindingOwner<T : ViewDataBinding> {
     }
 
     fun inflateContentViewBinding(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         layoutResId: Int
     ): View {
         binding = DataBindingUtil.inflate(inflater, layoutResId, container, false)

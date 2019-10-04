@@ -190,7 +190,7 @@ class MainActivity : BaseActivity(),
         doubleBackPressed = true
         showToast(getString(R.string.msg_press_back_to_exit))
 
-        GlobalScope.launch(Dispatchers.Main) {
+        launch {
             delay(2000)
             doubleBackPressed = false
         }

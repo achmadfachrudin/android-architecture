@@ -2,7 +2,8 @@ package com.project.framework.util
 
 import java.text.ParseException
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
+import java.util.Locale
 import java.util.concurrent.TimeUnit
 
 /**
@@ -12,7 +13,7 @@ object DateUtil {
     const val EEEE = "EEEE"
     const val dd_MMMM_yyyy = "dd MMMM yyyy" // 21 Jan 2021
     const val yyyy_MM_dd = "yyyy-MM-dd" // 2021-01-21
-    const val yyyy_MM_dd_T_HHmmss_Z = "yyyy-MM-dd'T'HH:mm:ss'Z'" //2019-05-20T12:27:01Z
+    const val yyyy_MM_dd_T_HHmmss_Z = "yyyy-MM-dd'T'HH:mm:ss'Z'" // 2019-05-20T12:27:01Z
 
     /**
      * @param dateSource is String

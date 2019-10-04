@@ -6,8 +6,6 @@ import com.project.app.databinding.ActivitySplashScreenBinding
 import com.project.framework.core.BaseActivity
 import com.project.framework.core.owner.ViewDataBindingOwner
 import com.project.framework.core.owner.ViewModelOwner
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -30,7 +28,7 @@ class SplashScreenActivity : BaseActivity(),
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        GlobalScope.launch(Dispatchers.Main) {
+        launch {
             delay(2100)
             MainActivity.startThisActivity(this@SplashScreenActivity)
             finish()

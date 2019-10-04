@@ -8,8 +8,15 @@ import androidx.appcompat.app.AppCompatActivity
 import com.project.framework.BR
 import com.project.framework.core.owner.ViewDataBindingOwner
 import com.project.framework.core.owner.ViewModelOwner
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlin.coroutines.CoroutineContext
 
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity : AppCompatActivity(), CoroutineScope {
+
+    private val parentJob = SupervisorJob()
+    override val coroutineContext: CoroutineContext = parentJob + Dispatchers.Main
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +41,7 @@ abstract class BaseActivity : AppCompatActivity() {
         }
     }
 
-    open protected fun getViewLayoutResId(): Int {
+    protected open fun getViewLayoutResId(): Int {
         val layout = javaClass.annotations.find { it is ViewLayout } as? ViewLayout
         return layout?.value ?: View.NO_ID
     }
@@ -48,7 +55,7 @@ abstract class BaseActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    open protected fun onToolBarBackButtonPressed() {
+    protected open fun onToolBarBackButtonPressed() {
         finish()
     }
 

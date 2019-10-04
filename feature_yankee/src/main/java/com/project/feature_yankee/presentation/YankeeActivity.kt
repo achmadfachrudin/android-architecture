@@ -9,7 +9,6 @@ import com.project.feature_yankee.R
 import com.project.feature_yankee.databinding.ActivityYankeeBinding
 import com.project.framework.core.BaseActivity
 import com.project.framework.core.owner.ViewDataBindingOwner
-import com.project.framework.core.owner.ViewModelOwner
 import com.project.framework.navigation.Navigation
 import com.project.framework.navigation.NavigationEvent
 import org.greenrobot.eventbus.EventBus

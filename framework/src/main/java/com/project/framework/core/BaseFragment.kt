@@ -12,7 +12,8 @@ import com.project.framework.core.owner.ViewModelOwner
 abstract class BaseFragment : Fragment() {
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return getLayoutIfDefined(inflater, container)
@@ -36,7 +37,7 @@ abstract class BaseFragment : Fragment() {
         }
     }
 
-    open protected fun getViewLayoutResId(): Int {
+    protected open fun getViewLayoutResId(): Int {
         val layout = javaClass.annotations.find { it is ViewLayout } as? ViewLayout
         return layout?.value ?: View.NO_ID
     }

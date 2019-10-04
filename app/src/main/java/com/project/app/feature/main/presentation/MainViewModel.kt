@@ -6,8 +6,6 @@ import com.project.data.entities.menu.Menu
 import com.project.data.repository.MainRepository
 import com.project.framework.core.BaseViewModel
 import com.project.framework.core.NetworkState
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 /**
@@ -21,7 +19,7 @@ class MainViewModel(private val mainRepository: MainRepository) : BaseViewModel(
     fun getMenuFromApi() {
         networkState.value = NetworkState.LOADING
 
-        GlobalScope.launch(Dispatchers.Main) {
+        launch {
             val request = mainRepository.getMenuAsync()
             try {
                 val response = request.await()

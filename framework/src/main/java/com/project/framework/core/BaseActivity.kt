@@ -2,7 +2,6 @@ package com.project.framework.core
 
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
 import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
 import com.project.framework.BR
@@ -18,6 +17,8 @@ abstract class BaseActivity : AppCompatActivity(), CoroutineScope {
     private val parentJob = SupervisorJob()
     override val coroutineContext: CoroutineContext = parentJob + Dispatchers.Main
 
+    abstract val layoutResourceId: Int
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -25,11 +26,9 @@ abstract class BaseActivity : AppCompatActivity(), CoroutineScope {
     }
 
     private fun setLayoutIfDefined() {
-        val layoutResId = getViewLayoutResId()
-        if (layoutResId == View.NO_ID) return
 
         if (this is ViewDataBindingOwner<*>) {
-            setContentViewBinding(this, layoutResId)
+            setContentViewBinding(this, layoutResourceId)
             if (this is ViewModelOwner<*>) {
                 binding.setVariable(BR.vm, this.viewModel)
             }
@@ -37,13 +36,8 @@ abstract class BaseActivity : AppCompatActivity(), CoroutineScope {
                 binding.setVariable(BR.view, this)
             }
         } else {
-            setContentView(layoutResId)
+            setContentView(layoutResourceId)
         }
-    }
-
-    protected open fun getViewLayoutResId(): Int {
-        val layout = javaClass.annotations.find { it is ViewLayout } as? ViewLayout
-        return layout?.value ?: View.NO_ID
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {

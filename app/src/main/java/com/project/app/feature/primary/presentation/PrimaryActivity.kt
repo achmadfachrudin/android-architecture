@@ -28,10 +28,7 @@ class PrimaryActivity : BaseActivity(),
         }
     }
 
-    override fun getViewLayoutResId(): Int {
-        return R.layout.activity_primary
-    }
-
+    override val layoutResourceId = R.layout.activity_primary
     override lateinit var binding: ActivityPrimaryBinding
     override val viewModel: PrimaryViewModel by viewModel()
 

@@ -18,10 +18,7 @@ class SplashScreenActivity : BaseActivity(),
     ViewModelOwner<SplashScreenViewModel>,
     ViewDataBindingOwner<ActivitySplashScreenBinding> {
 
-    override fun getViewLayoutResId(): Int {
-        return R.layout.activity_splash_screen
-    }
-
+    override val layoutResourceId = R.layout.activity_splash_screen
     override lateinit var binding: ActivitySplashScreenBinding
     override val viewModel: SplashScreenViewModel by viewModel()
 

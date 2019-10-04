@@ -20,8 +20,6 @@ import com.project.framework.extention.showLongToast
 import com.project.framework.extention.showToast
 import com.project.framework.widget.LoadingView
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -42,10 +40,7 @@ class MainActivity : BaseActivity(),
         }
     }
 
-    override fun getViewLayoutResId(): Int {
-        return R.layout.activity_main
-    }
-
+    override val layoutResourceId = R.layout.activity_main
     override lateinit var binding: ActivityMainBinding
     override val viewModel: MainViewModel by viewModel()
 

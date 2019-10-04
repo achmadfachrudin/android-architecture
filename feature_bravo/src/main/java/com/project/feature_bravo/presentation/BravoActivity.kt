@@ -23,10 +23,6 @@ class BravoActivity : BaseActivity(),
     ViewModelOwner<BravoViewModel>,
     ViewDataBindingOwner<ActivityBravoBinding> {
 
-    override fun getViewLayoutResId(): Int {
-        return R.layout.activity_bravo
-    }
-
     companion object {
         const val TEXT_TEST = "TEXT_TEST"
 
@@ -37,6 +33,7 @@ class BravoActivity : BaseActivity(),
         }
     }
 
+    override val layoutResourceId = R.layout.activity_bravo
     override lateinit var binding: ActivityBravoBinding
     override val viewModel: BravoViewModel by viewModel()
 

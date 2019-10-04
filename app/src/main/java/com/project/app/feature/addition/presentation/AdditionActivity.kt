@@ -28,10 +28,7 @@ class AdditionActivity : BaseActivity(),
         }
     }
 
-    override fun getViewLayoutResId(): Int {
-        return R.layout.activity_addition
-    }
-
+    override val layoutResourceId = R.layout.activity_addition
     override lateinit var binding: ActivityAdditionBinding
     override val viewModel: AdditionViewModel by viewModel()
 

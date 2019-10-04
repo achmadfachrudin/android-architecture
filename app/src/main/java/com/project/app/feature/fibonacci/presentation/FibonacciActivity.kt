@@ -21,10 +21,6 @@ class FibonacciActivity : BaseActivity(),
     ViewModelOwner<FibonacciViewModel>,
     ViewDataBindingOwner<ActivityFibonacciBinding> {
 
-    override fun getViewLayoutResId(): Int {
-        return R.layout.activity_fibonacci
-    }
-
     companion object {
         fun startThisActivity(context: Context) {
             val intent = Intent(context, FibonacciActivity::class.java)
@@ -32,6 +28,7 @@ class FibonacciActivity : BaseActivity(),
         }
     }
 
+    override val layoutResourceId = R.layout.activity_fibonacci
     override lateinit var binding: ActivityFibonacciBinding
     override val viewModel: FibonacciViewModel by viewModel()
 

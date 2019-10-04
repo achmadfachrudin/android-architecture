@@ -17,10 +17,6 @@ class YankeeActivity : BaseActivity(),
     YankeeView,
     ViewDataBindingOwner<ActivityYankeeBinding> {
 
-    override fun getViewLayoutResId(): Int {
-        return R.layout.activity_yankee
-    }
-
     companion object {
         fun startThisActivity(context: Context) {
             val intent = Intent(context, YankeeActivity::class.java)
@@ -28,6 +24,7 @@ class YankeeActivity : BaseActivity(),
         }
     }
 
+    override val layoutResourceId = R.layout.activity_yankee
     override lateinit var binding: ActivityYankeeBinding
     lateinit var viewModel: YankeeViewModel
 //    val viewModel by lazy {getViewModel(YankeeViewModel::class)}

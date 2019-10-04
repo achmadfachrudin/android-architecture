@@ -28,10 +28,7 @@ class MultiplicationActivity : BaseActivity(),
         }
     }
 
-    override fun getViewLayoutResId(): Int {
-        return R.layout.activity_multiplication
-    }
-
+    override val layoutResourceId = R.layout.activity_multiplication
     override lateinit var binding: ActivityMultiplicationBinding
     override val viewModel: MultiplicationViewModel by viewModel()
 

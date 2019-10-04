@@ -23,10 +23,6 @@ class AlphaActivity : BaseActivity(),
     ViewModelOwner<AlphaViewModel>,
     ViewDataBindingOwner<ActivityAlphaBinding> {
 
-    override fun getViewLayoutResId(): Int {
-        return R.layout.activity_alpha
-    }
-
     companion object {
         fun startThisActivity(context: Context) {
             val intent = Intent(context, AlphaActivity::class.java)
@@ -34,6 +30,7 @@ class AlphaActivity : BaseActivity(),
         }
     }
 
+    override val layoutResourceId = R.layout.activity_alpha
     override lateinit var binding: ActivityAlphaBinding
     override val viewModel: AlphaViewModel by viewModel()
 

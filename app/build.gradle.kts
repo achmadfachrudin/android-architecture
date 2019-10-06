@@ -6,6 +6,7 @@ plugins {
     kotlin("android")
     kotlin("android.extensions")
     kotlin("kapt")
+    id("de.mannodermaus.android-junit5")
 }
 
 android {
@@ -121,6 +122,12 @@ dependencies {
 
     /* android test */
     testImplementation(TestLibs.junit)
+    testImplementation(TestLibs.junit5api)
+    testImplementation(TestLibs.junit5engine)
+    testImplementation(TestLibs.spek2dsl)
+    testImplementation(TestLibs.spek2runner)
+//    testImplementation("org.jetbrains.kotlin:kotlin-reflect:2.0.7")
+    testImplementation(TestLibs.coroutineTest)
     testImplementation(TestLibs.coroutineTest)
     testImplementation(TestLibs.koinTest)
     testImplementation(TestLibs.mockito)

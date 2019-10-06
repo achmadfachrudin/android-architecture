@@ -26,11 +26,12 @@ buildscript {
     repositories {
         google()
         jcenter()
-        // maven { url = uri("https://plugins.gradle.org/m2/") }
+        maven { url = uri("https://dl.bintray.com/spekframework/spek-dev/") }
     }
     dependencies {
         classpath("com.android.tools.build:gradle:${Versions.gradle}")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}")
+        classpath("de.mannodermaus.gradle.plugins:android-junit5:${Versions.junit5android}")
     }
 }
 

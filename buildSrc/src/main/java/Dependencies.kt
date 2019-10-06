@@ -36,6 +36,9 @@ object Versions {
 
     /* test */
     const val junit = "4.12"
+    const val junit5 = "5.5.2"
+    const val junit5android = "1.5.2.0"
+    const val spek2 = "2.0.7"
     const val mockito = "3.0.0"
     const val espresso = "3.2.0"
     const val testCore = "1.2.0"
@@ -81,6 +84,10 @@ object Libs {
 
 object TestLibs {
     const val junit = "junit:junit:${Versions.junit}"
+    const val junit5api = "org.junit.jupiter:junit-jupiter-api:${Versions.junit5}"
+    const val junit5engine = "org.junit.jupiter:junit-jupiter-engine:${Versions.junit5}"
+    const val spek2dsl = "org.spekframework.spek2:spek-dsl-jvm:${Versions.spek2}"
+    const val spek2runner = "org.spekframework.spek2:spek-runner-junit5:${Versions.spek2}"
     const val coroutineTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutine}"
     const val koinTest = "org.koin:koin-test:${Versions.koin}"
     const val mockito = "org.mockito:mockito-core:${Versions.mockito}"

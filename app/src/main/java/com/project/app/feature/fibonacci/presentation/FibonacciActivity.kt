@@ -10,15 +10,13 @@ import com.project.app.R
 import com.project.app.databinding.ActivityFibonacciBinding
 import com.project.framework.core.BaseActivity
 import com.project.framework.core.owner.ViewDataBindingOwner
-import com.project.framework.core.owner.ViewModelOwner
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * Created by achmad.fachrudin on 11-Jun-19
  */
-class FibonacciActivity : BaseActivity(),
+class FibonacciActivity : BaseActivity<FibonacciViewModel>(),
     FibonacciView,
-    ViewModelOwner<FibonacciViewModel>,
     ViewDataBindingOwner<ActivityFibonacciBinding> {
 
     companion object {

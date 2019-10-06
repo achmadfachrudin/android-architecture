@@ -15,7 +15,6 @@ import com.project.app.feature.main.adapter.MenuListItemAdapter
 import com.project.framework.core.BaseActivity
 import com.project.framework.core.NetworkState
 import com.project.framework.core.owner.ViewDataBindingOwner
-import com.project.framework.core.owner.ViewModelOwner
 import com.project.framework.extention.showLongToast
 import com.project.framework.extention.showToast
 import com.project.framework.widget.LoadingView
@@ -27,9 +26,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 /**
  * Created by achmad.fachrudin on 3-Jun-19
  */
-class MainActivity : BaseActivity(),
+class MainActivity : BaseActivity<MainViewModel>(),
     MainView,
-    ViewModelOwner<MainViewModel>,
     ViewDataBindingOwner<ActivityMainBinding> {
 
     companion object {

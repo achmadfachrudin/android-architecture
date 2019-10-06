@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.project.framework.BR
 import com.project.framework.core.owner.ViewDataBindingOwner
-import com.project.framework.core.owner.ViewModelOwner
 
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment<VM : BaseViewModel> : Fragment() {
+
+    abstract val layoutResourceId: Int
+    abstract val viewModel: VM
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,25 +22,16 @@ abstract class BaseFragment : Fragment() {
     }
 
     private fun getLayoutIfDefined(inflater: LayoutInflater, container: ViewGroup?): View? {
-        val layoutResId = getViewLayoutResId()
-        if (layoutResId == View.NO_ID) return null
 
         if (this is ViewDataBindingOwner<*>) {
-            val view = inflateContentViewBinding(inflater, container, layoutResId)
-            if (this is ViewModelOwner<*>) {
-                binding.setVariable(BR.vm, this.viewModel)
-            }
+            val view = inflateContentViewBinding(inflater, container, layoutResourceId)
+            binding.setVariable(BR.vm, viewModel)
             if (this is BaseView) {
                 binding.setVariable(BR.view, this)
             }
             return view
         } else {
-            return inflater.inflate(layoutResId, container, false)
+            return inflater.inflate(layoutResourceId, container, false)
         }
-    }
-
-    protected open fun getViewLayoutResId(): Int {
-        val layout = javaClass.annotations.find { it is ViewLayout } as? ViewLayout
-        return layout?.value ?: View.NO_ID
     }
 }

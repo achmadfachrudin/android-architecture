@@ -6,18 +6,18 @@ import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
 import com.project.framework.BR
 import com.project.framework.core.owner.ViewDataBindingOwner
-import com.project.framework.core.owner.ViewModelOwner
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlin.coroutines.CoroutineContext
 
-abstract class BaseActivity : AppCompatActivity(), CoroutineScope {
+abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity(), CoroutineScope {
 
     private val parentJob = SupervisorJob()
     override val coroutineContext: CoroutineContext = parentJob + Dispatchers.Main
 
     abstract val layoutResourceId: Int
+    abstract val viewModel: VM
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,9 +29,7 @@ abstract class BaseActivity : AppCompatActivity(), CoroutineScope {
 
         if (this is ViewDataBindingOwner<*>) {
             setContentViewBinding(this, layoutResourceId)
-            if (this is ViewModelOwner<*>) {
-                binding.setVariable(BR.vm, this.viewModel)
-            }
+            binding.setVariable(BR.vm, viewModel)
             if (this is BaseView) {
                 binding.setVariable(BR.view, this)
             }

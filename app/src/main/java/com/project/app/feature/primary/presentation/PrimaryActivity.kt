@@ -10,15 +10,13 @@ import com.project.app.R
 import com.project.app.databinding.ActivityPrimaryBinding
 import com.project.framework.core.BaseActivity
 import com.project.framework.core.owner.ViewDataBindingOwner
-import com.project.framework.core.owner.ViewModelOwner
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * Created by achmad.fachrudin on 9-Jun-19
  */
-class PrimaryActivity : BaseActivity(),
+class PrimaryActivity : BaseActivity<PrimaryViewModel>(),
     PrimaryView,
-    ViewModelOwner<PrimaryViewModel>,
     ViewDataBindingOwner<ActivityPrimaryBinding> {
 
     companion object {

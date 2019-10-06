@@ -9,7 +9,6 @@ import com.project.feature_alpha.R
 import com.project.feature_alpha.databinding.ActivityAlphaBinding
 import com.project.framework.core.BaseActivity
 import com.project.framework.core.owner.ViewDataBindingOwner
-import com.project.framework.core.owner.ViewModelOwner
 import com.project.framework.navigation.Navigation
 import com.project.framework.navigation.NavigationEvent
 import org.greenrobot.eventbus.EventBus
@@ -18,9 +17,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 /**
  * Created by achmad.fachrudin on 18-Jun-19
  */
-class AlphaActivity : BaseActivity(),
+class AlphaActivity : BaseActivity<AlphaViewModel>(),
     AlphaView,
-    ViewModelOwner<AlphaViewModel>,
     ViewDataBindingOwner<ActivityAlphaBinding> {
 
     companion object {

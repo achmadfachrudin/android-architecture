@@ -13,7 +13,7 @@ import com.project.framework.navigation.Navigation
 import com.project.framework.navigation.NavigationEvent
 import org.greenrobot.eventbus.EventBus
 
-class YankeeActivity : BaseActivity(),
+class YankeeActivity : BaseActivity<YankeeViewModel>(),
     YankeeView,
     ViewDataBindingOwner<ActivityYankeeBinding> {
 
@@ -26,7 +26,7 @@ class YankeeActivity : BaseActivity(),
 
     override val layoutResourceId = R.layout.activity_yankee
     override lateinit var binding: ActivityYankeeBinding
-    lateinit var viewModel: YankeeViewModel
+    override lateinit var viewModel: YankeeViewModel
 //    val viewModel by lazy {getViewModel(YankeeViewModel::class)}
 
     override fun onCreate(savedInstanceState: Bundle?) {

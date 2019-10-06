@@ -10,15 +10,13 @@ import com.project.app.R
 import com.project.app.databinding.ActivityMultiplicationBinding
 import com.project.framework.core.BaseActivity
 import com.project.framework.core.owner.ViewDataBindingOwner
-import com.project.framework.core.owner.ViewModelOwner
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * Created by achmad.fachrudin on 7-Jun-19
  */
-class MultiplicationActivity : BaseActivity(),
+class MultiplicationActivity : BaseActivity<MultiplicationViewModel>(),
     MultiplicationView,
-    ViewModelOwner<MultiplicationViewModel>,
     ViewDataBindingOwner<ActivityMultiplicationBinding> {
 
     companion object {
